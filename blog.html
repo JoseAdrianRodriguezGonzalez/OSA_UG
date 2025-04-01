@@ -165,7 +165,7 @@
     <header class="w-full">
         <div class="flex flex-col items-center w-full">
             <a href="#" class="w-full">
-                <img src="./assets/optic1.jpg" class="w-full h-auto object-cover" alt="">
+                <img src="./assets/OpticaLogo.png" class="w-full h-auto object-cover" alt="">
             </a>
         </div>
     </header>
@@ -185,7 +185,7 @@
         <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
             <div class="w-full container mx-auto flex flex-col sm:flex-row items-center justify-center text-sm font-bold uppercase mt-0 px-6 py-2">
                 <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Actividad</a>
-                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Historia</a>
+                <a href="./routes/historia.html" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Historia</a>
                 <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Miembros</a>
                 <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Contacto</a>
                 <a href="https://photonics-mexico.com/" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Home</a>
@@ -198,8 +198,11 @@
         </div>
     </nav>
 
-
-    <div class="container mx-auto flex flex-wrap py-6">
+    <div class="py-2 mt-5 pl-8 text-xl sm:text-lg lg:text-3xl font-semibold break-words">
+        Impulsamos la investigación en óptica y fotónica para cambiar el mundo.
+    </div>
+    
+    <div class="container mx-auto flex flex-wrap py-2">
 <!--					<embed src="files/Unirse_OPTICA.pdf" type="application/pdf" width="60%" height="500px" />
 -->
         <!-- CARROUSEL -->
@@ -225,7 +228,7 @@
                     <i class="fas fa-chevron-right text-2xl font-bold text-gray-500"></i>
                 </button>
         
-                <div class="relative h-80 slider w-xs" style="width: 25rem">
+                <div class="relative h-80 slider w-xs" style="width: 24rem">
                     <template x-for="(image, index) in images">
                         <div x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute top-0">
                             <img :src="image" alt="image"  class="images" />
@@ -233,104 +236,7 @@
                     </template>
                 </div>
             </div>
-            <article class="flex flex-col shadow my-4">
-                <h1 class="text-xl font-semibold pb-5 self-center" >
-                    Historia del grupo
-                </h1> 
-                <p>Más que un equipo, somos una comunidad impulsada por la investigación, la tecnología y la innovación. Exploramos la luz, desarrollamos soluciones ópticas avanzadas y redefinimos la manera en que el mundo observa y comprende su entorno.</p>
-            </article>
-                <h2 class="text-xl font-semibold pb-5 text-center">2007</h2>
-                    <div x-data="imageSlider([
-                    './assets/img/2007/2007.jpeg',
-                    './assets/img/2007/2007_1.JPG',
-                    './assets/img/2007/2007_2.JPG',
-                    './assets/img/2007/2007_3.JPG',
-                    './assets/img/2007/2007_4.JPG',
-                    './assets/img/2007/2007_5.JPG',
-                    './assets/img/2007/2007_6.JPG',
-                    './assets/img/2007/2007_7.JPG',
-                    './assets/img/2007/2007_8.JPG',
-                    './assets/img/2007/2007_9.JPG'
-                ])" class="relative max-w-l overflow-hidden rounded-md bg-gray-100 sm:p-4 slider2007 mx-auto">
-                        <div class="absolute right-5 top-5 z-10 rounded-full bg-gray-600 px-2 text-center text-sm text-white">
-                            <span x-text="currentIndex"></span>/<span x-text="images.length"></span>
-                        </div>
-                
-                        <button @click="previous()" class="absolute left-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
-                            <i class="fas fa-chevron-left text-2xl font-bold text-gray-500"></i>
-                        </button>
-                
-                        <button @click="forward()" class="absolute right-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
-                            <i class="fas fa-chevron-right text-2xl font-bold text-gray-500"></i>
-                        </button>
-                
-                        <div class="relative h-80 slider2 w-xs" style="width: 35rem">
-                            <template x-for="(image, index) in images">
-                                <div x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute top-0">
-                                    <img :src="image" alt="image"  class="images2" />
-                                </div>
-                            </template>
-                        </div>
-                    </div>
-                
-                <h2 class="text-xl font-semibold pb-5 text-center">2011</h2>
-                    <div x-data="imageSlider([
-                    './assets/img/2011/2011.jpeg',
-                    './assets/img/2011/2011_1.JPG',
-                    './assets/img/2011/2011_3.JPG',
-                    './assets/img/2011/2011_4.JPG',
-                    './assets/img/2011/2011_5.JPG',
-                    './assets/img/2011/2011_6.JPG',
-                    './assets/img/2011/2011_7.JPG'
-                ])" class="relative max-w-l overflow-hidden rounded-md bg-gray-100 sm:p-4 slider2011 self-center mx-auto">
-                        <div class="absolute right-5 top-5 z-10 rounded-full bg-gray-600 px-2 text-center text-sm text-white">
-                            <span x-text="currentIndex"></span>/<span x-text="images.length"></span>
-                        </div>
-                
-                        <button @click="previous()" class="absolute left-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
-                            <i class="fas fa-chevron-left text-2xl font-bold text-gray-500"></i>
-                        </button>
-                
-                        <button @click="forward()" class="absolute right-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
-                            <i class="fas fa-chevron-right text-2xl font-bold text-gray-500"></i>
-                        </button>
-                
-                        <div class="relative h-80 slider w-xs" style="width: 25rem">
-                            <template x-for="(image, index) in images">
-                                <div x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute top-0">
-                                    <img :src="image" alt="image"  class="images" />
-                                </div>
-                            </template>
-                        </div>
-                    </div>
-                <h2 class="text-xl font-semibold pb-5 text-center">2018</h2>
-                    <div x-data="imageSlider([
-                    './assets/img/2018/2018.jpg',
-                    './assets/img/2018/2018_1.jpeg',
-                    './assets/img/2018/2018_2.jpeg',
-                    './assets/img/2018/2018_3.jpeg',
-                    './assets/img/2018/2018_4.jpeg'
-                ])" class="relative max-w-l overflow-hidden rounded-md bg-gray-100 sm:p-4 slider2018 mx-auto">
-                        <div class="absolute right-5 top-5 z-10 rounded-full bg-gray-600 px-2 text-center text-sm text-white">
-                            <span x-text="currentIndex"></span>/<span x-text="images.length"></span>
-                        </div>
-                
-                        <button @click="previous()" class="absolute left-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
-                            <i class="fas fa-chevron-left text-2xl font-bold text-gray-500"></i>
-                        </button>
-                
-                        <button @click="forward()" class="absolute right-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
-                            <i class="fas fa-chevron-right text-2xl font-bold text-gray-500"></i>
-                        </button>
-                
-                        <div class="relative h-80 slider w-xs" style="width: 25rem">
-                            <template x-for="(image, index) in images">
-                                <div x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute top-0">
-                                    <img :src="image" alt="image"  class="images" />
-                                </div>
-                            </template>
-                        </div>
-                    </div>
+
         </main>
         
             <!--
@@ -400,15 +306,48 @@
         <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
 
             <div class="w-full bg-white shadow flex flex-col my-4 p-6">
-                <p class="text-xl font-semibold pb-5">Conoce sobre nuestra actividades</p>
-                <p class="pb-2">Creemos en la enseñanza bajo los valores de ética, responsabilidad, respeto y cooperación.
-                    Por ello, realizamos actividades que incentiven a nuestra comunidad a participar y a adentrarse en las diversas ramas de ciencia y arte.</p>
-                <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
-                    Ver más
-                </a>
-                <div class="div">
-                    <h1>Entrevistas a doctoras</h1>
+                
+                <div class="flex flex-wrap flex-col gap-2">
                     <img src="./assets/8m.jpeg" alt="">
+                    <h2 class="font-bold text-lg">Entrevistas a doctoras</h2>
+                    <div>
+                        <a href="https://www.facebook.com/share/v/1XcqzBi7vb/" class="flex flex-row flex-wrap ">
+                            <div class="w-1/4 rounded-full overflow-hidden">
+                                <img src="./assets/entrevistas/karen.jfif" class="object-cover" alt="">
+                            </div>
+                            <span class="self-center w-3/4 sm:text-2xl lg:text-3xl  text-center">Ana Karen Reyes</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.facebook.com/share/v/18V1h8ftzo/" class="flex flex-row flex-wrap" >
+                            <div class="w-1/4 rounded-full overflow-hidden">
+                                <img src="./assets/entrevistas/alondrajfif" class="object-cover" alt="">
+                            </div>
+                            <span class="self-center w-3/4 text-center sm:text-2xl lg:text-3xl">Alondra Jazmín Fraustro Cardiel</span>  
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.facebook.com/share/v/1GqXcjJ56k/" class="flex flex-row flex-wrap">
+                            <div class="w-1/4 rounded-full overflow-hidden">
+                                <img src="./assets/entrevistas/Meli.jpg" class="object-cover" alt="">
+                            </div>
+
+                            <span class="self-center w-3/4  text-center sm:text-2xl lg:text-3xl">Melissa Yaeth Paredes Cabrera</span>
+                        </a>
+
+                    </div>
+                    <div>
+                        <a href="https://www.facebook.com/share/r/1Vxt2BWQNQ/"class="flex flex-row flex-wrap" >
+                            <img src="" alt="">
+                            <span class="self-center">Amalia Martinez García</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.facebook.com/share/v/1FHjqJz9VQ/" class="flex flex-row flex-wrap">
+                            <img src="" alt="">
+                            <span class="self-center">Dora Luz Almanza Ojeda</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 <!--instagram-->
